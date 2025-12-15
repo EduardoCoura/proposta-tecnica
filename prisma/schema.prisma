@@ -7,12 +7,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Aqui definimos como é um Usuário no nosso sistema
 model User {
   id        String   @id @default(uuid()) // ID único universal
   name      String
-  email     String   @unique              // Email não pode repetir
-  password  String                        // Vamos guardar o hash aqui
-  createdAt DateTime @default(now())      // Data de criação automática
-  updatedAt DateTime @updatedAt           // Atualiza sozinho quando editamos
+  email     String   @unique              
+  password  String                        
+  createdAt DateTime @default(now())      
+  updatedAt DateTime @updatedAt           
 }
